@@ -596,3 +596,32 @@ clearCart;
 /* =========================================
 END MAIN.JS
 ========================================= */
+document
+.querySelectorAll(".wishlist-btn")
+.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const product = {
+
+id:Number(
+button.dataset.id
+),
+
+name:
+button.dataset.name,
+
+price:Number(
+button.dataset.price
+),
+
+image:
+button.dataset.image
+
+};
+
+addToFavorites(product);
+
+});
+
+});

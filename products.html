@@ -104,7 +104,17 @@ body{
         <div class="product-info">
             <h3>مزهرية مغربية</h3>
             <p class="price">390 درهم</p>
-            <button class="btn">أضف إلى السلة</button>
+
+            <button class="btn"
+            onclick="addToCart({
+                id:1,
+                name:'مزهرية مغربية',
+                price:390,
+                image:'imagine/poterie1.jpg'
+            })">
+                أضف إلى السلة
+            </button>
+
         </div>
 
     </div>
@@ -118,7 +128,17 @@ body{
         <div class="product-info">
             <h3>صحن مزخرف</h3>
             <p class="price">320 درهم</p>
-            <button class="btn">أضف إلى السلة</button>
+
+            <button class="btn"
+            onclick="addToCart({
+                id:2,
+                name:'صحن مزخرف',
+                price:320,
+                image:'imagine/tabsil.png'
+            })">
+                أضف إلى السلة
+            </button>
+
         </div>
 
     </div>
@@ -132,15 +152,27 @@ body{
         <div class="product-info">
             <h3>طاجين فاخر</h3>
             <p class="price">450 درهم</p>
-            <button class="btn">أضف إلى السلة</button>
+
+            <button class="btn"
+            onclick="addToCart({
+                id:3,
+                name:'طاجين فاخر',
+                price:450,
+                image:'imagine/tajine.png'
+            })">
+                أضف إلى السلة
+            </button>
+
         </div>
 
     </div>
 
 </div>
-<script>
-    
-</script>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
 </body>
 </html>
 ```
