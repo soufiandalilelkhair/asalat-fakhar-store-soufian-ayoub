@@ -625,3 +625,76 @@ addToFavorites(product);
 });
 
 });
+function openOrderForm(){
+    document.getElementById("orderModal").style.display="flex";
+}
+
+function closeOrderForm(){
+    document.getElementById("orderModal").style.display="none";
+}
+function sendOrderWhatsApp(){
+
+    const firstName =
+    document.getElementById("firstName").value;
+
+    const lastName =
+    document.getElementById("lastName").value;
+
+    const city =
+    document.getElementById("city").value;
+
+    const phone =
+    document.getElementById("phone").value;
+
+    const address =
+    document.getElementById("address").value;
+
+    const cart =
+    JSON.parse(localStorage.getItem("cart")) || [];
+
+    let productsText = "";
+
+    let total = 0;
+
+    cart.forEach(item => {
+
+        productsText +=
+        `• ${item.name} - ${item.price} درهم\n`;
+
+        total += Number(item.price);
+
+    });
+
+    let message =
+`🛒 طلب جديد
+
+👤 الاسم: ${firstName}
+
+👤 النسب: ${lastName}
+
+🏙️ المدينة: ${city}
+
+📞 الهاتف: ${phone}
+
+📍 العنوان:
+${address}
+
+--------------------
+
+المنتجات:
+
+${productsText}
+
+--------------------
+
+💰 المجموع:
+${total} درهم`;
+
+    const whatsappNumber =
+    "212650671898";
+
+    const url =
+    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url,"_blank");
+}
