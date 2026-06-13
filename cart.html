@@ -307,28 +307,24 @@ ${total} درهم
 
 </div>
 
+
+
 <div class="actions">
 
-<button
-class="checkout-btn"
-onclick="checkout()">
-
-إتمام الطلب
-
+   <button class="checkout-btn" onclick="openOrderModal()">
+    إتمام الطلب
 </button>
 
-<button
-class="clear-btn"
-onclick="
-clearCart();
-renderCart();
-">
-
-تفريغ السلة
-
-</button>
+    <button class="clear-btn"
+        onclick="
+        clearCart();
+        renderCart();
+        ">
+        تفريغ السلة
+    </button>
 
 </div>
+
 
 </div>
 
@@ -372,6 +368,61 @@ renderCart();
 
 </script>
 
+</div>
+
+    </div>
+
+</div>
+
+</div>
+<div id="orderModal" class="order-modal">
+
+    <div class="order-box">
+        <span
+class="close-modal"
+onclick="closeOrderModal()">
+
+×
+
+</span>
+<h2>معلومات العميل</h2>
+
+<p class="order-subtitle">
+    المرجو إدخال معلومات التوصيل
+</p>
+
+<div class="input-group">
+    <label>الاسم الكامل *</label>
+    <input type="text" id="firstName" placeholder="أدخل اسمك الكامل">
+</div>
+
+<div class="input-group">
+    <label>رقم الهاتف *</label>
+    <input type="tel" id="phone" placeholder="أدخل رقم هاتفك">
+</div>
+
+<div class="input-group">
+    <label>المدينة *</label>
+    <input type="text" id="city" placeholder="أدخل اسم المدينة">
+</div>
+
+<div class="input-group">
+    <label>العنوان الكامل *</label>
+    <textarea id="address"
+    placeholder="أدخل عنوانك بالتفصيل"></textarea>
+</div>
+
+<div id="orderSummary"></div>
+
+<button
+class="confirm-order-btn"
+onclick="sendOrderWhatsApp()">
+
+تأكيد الطلب عبر واتساب
+</button>
+    </div>
+
+</div>
 </body>
 
 </html>
